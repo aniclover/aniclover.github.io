@@ -32,9 +32,27 @@
         .jumbotron {
             background-color: white;
         }
+        
+        .fab {
+            font-size: 32px;
+            color: white;
+            background: steelblue;
+            border: 10px solid steelblue;
+            padding: 0px;
+            width: 52px;
+            height: 52px;
+        }
+        
+        .btn {
+            padding: 2px;
+        }
+        
+        .fab:hover {
+            -webkit-transform: scale(1.1);
+        }
     </style>
 
-    <script type="text/javascript" src="https://platform-api.sharethis.com/js/sharethis.js#property=5d2a2a44b682f200127f8391&product=inline-share-buttons"></script>
+    <script src="https://kit.fontawesome.com/a1391b5195.js"></script>
 
     <title>AniCLover</title>
 </head>
@@ -50,7 +68,11 @@
 
             <div class="container">
                 <h1 class="display-3">AniCLover</h1>
-                <div class="sharethis-inline-follow-buttons"></div>
+                <div class="btn-group">
+                    <a class="btn" href="https://twitter.com/aniclover" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a class="btn" href="https://www.twitch.tv/anicloverclub" target="_blank"><i class="fab fa-twitch"></i></a>
+                    <a class="btn" href="https://www.facebook.com/AniCLoverClub" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                </div>
             </div>
         </div>
 
