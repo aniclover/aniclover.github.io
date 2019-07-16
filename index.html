@@ -16,8 +16,17 @@
         
         .jumbotron {
             background-color: black;
-            background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 1.0), rgba(0, 0, 0, 0.6)), url("./assets/dj-deck.jpg");
-            background-size: cover;
+            background-image: url("./assets/anicloverbanner1500x500.png");
+            background-size: auto;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 500px;
+	    padding: 0px;
+        }
+
+        .jumbotron p {
+            display: block;
+            text-align: bottom;
         }
         
         .display-3 {
@@ -39,7 +48,7 @@
         .btn {
             padding: 2px;
         }
-        
+
         .horiz-center {
             margin: 0 auto;
             text-align: center;
@@ -76,15 +85,15 @@
     <main role="main">
 
         <!-- Main jumbotron for a primary marketing message or call to action -->
-        <div class="jumbotron text-center">
+        <div class="jumbotron d-flex align-items-end">
 
             <div class="container">
-                <h1 class="display-3">AniCLover</h1>
-                <div class="btn-group">
+                <!--<h1 class="display-3">AniCLover</h1>-->
+                <p class="btn-group">
                     <a class="btn" href="https://twitter.com/aniclover" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a class="btn" href="https://www.twitch.tv/anicloverclub" target="_blank"><i class="fab fa-twitch"></i></a>
                     <a class="btn" href="https://www.facebook.com/AniCLoverClub" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                </div>
+                </p>
             </div>
         </div>
 
