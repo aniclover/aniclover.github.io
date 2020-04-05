@@ -52,11 +52,11 @@ twq('track','PageView');
         .jumbotron {
             background-color: black;
             background-image: url("./assets/anicloverbanner1500x500.png");
-            background-size: auto;
+            background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
             height: 500px;
-	    padding: 0px;
+	        padding: 0px;
         }
 
         .jumbotron p {
@@ -148,6 +148,7 @@ twq('track','PageView');
         </div>
 
         <div class="container">
+            <!--
             <div class="row">
                 <div class="col-md-12">
                     <link rel="stylesheet" type="text/css" href="https://www.brownpapertickets.com/widget_v651.css" />
@@ -167,9 +168,10 @@ twq('track','PageView');
                     </div>
                 </div>
             </div>
+            -->
             <div class="row horiz-center">
                 <div class="col-md-6">
-                    <a class="twitter-timeline" href="https://twitter.com/AniCLover" data-width="500px" data-height="600px">Tweets by AniCLover</a>
+                    <a class="twitter-timeline" href="https://twitter.com/AniCLover" data-width="100%" data-height="600px">Tweets by AniCLover</a>
                     <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
                 </div>
                 <div class="col-md-6">
@@ -196,7 +198,7 @@ twq('track','PageView');
     <!-- Create a Twitch.Embed object that will render within the "twitch-embed" root element. -->
     <script type="text/javascript">
         new Twitch.Embed("twitch-embed", {
-            width: 854,
+            width: "100%",
             height: 480,
             layout: "video",
             channel: "anicloverclub"
