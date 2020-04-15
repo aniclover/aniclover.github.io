@@ -51,17 +51,37 @@ twq('track','PageView');
         
         .jumbotron {
             background-color: black;
-            background-image: url("./assets/anicloverbanner1500x500.png");
+            /* background-image: url("./assets/anicloverbanner1500x500.png");
             background-size: contain;
             background-position: center;
             background-repeat: no-repeat;
-            height: 500px;
+            height: 500px; */
 	        padding: 0px;
         }
 
         .jumbotron p {
             display: block;
             text-align: bottom;
+        }
+
+        .img-wrapper {
+            position: relative;
+        }
+
+        .img-overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: left;
+        }
+
+        .img-overlay:before {
+            content: ' ';
+            display: block;
+            /* adjust 'height' to position overlay content vertically */
+            height: 95%;
         }
         
         .display-3 {
@@ -137,9 +157,10 @@ twq('track','PageView');
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron d-flex align-items-end">
 
-            <div class="container">
+            <div class="container img-wrapper">
                 <!--<h1 class="display-3">AniCLover</h1>-->
-                <p class="btn-group">
+                <img class="img-fluid" src="./assets/anicloverbanner1500x500.png">
+                <p class="btn-group img-overlay">
                     <a class="btn" href="https://twitter.com/aniclover" target="_blank"><i class="fab fa-twitter"></i></a>
                     <a class="btn" href="https://www.twitch.tv/anicloverclub" target="_blank"><i class="fab fa-twitch"></i></a>
                     <a class="btn" href="https://www.facebook.com/AniCLoverClub" target="_blank"><i class="fab fa-facebook-f"></i></a>
