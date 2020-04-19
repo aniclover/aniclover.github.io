@@ -1,0 +1,34 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3892365, 2020-04-18T20:03:24-0400
+ * 
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are 
+ * explicitly restricted from using the Licensed Webfonts(s).
+ * 
+ * You may obtain a valid license at the URLs below.
+ * 
+ * Webfont: Noah-Regular by Fontfabric
+ * URL: https://www.myfonts.com/fonts/font-fabric/noah/regular/
+ * 
+ * Webfont: Noah-Bold by Fontfabric
+ * URL: https://www.myfonts.com/fonts/font-fabric/noah/bold/
+ * 
+ * 
+ * Webfonts copyright: Copyright (c) 2019 by Svet Simov. All rights reserved.
+ * 
+ * © 2020 MyFonts Inc
+*/
+
+
+
+  
+@font-face {
+  font-family: 'Noah-Bold';
+  src: url('webFonts/Noah-Bold/font.woff2') format('woff2'), url('webFonts/Noah-Bold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'Noah-Regular';
+  src: url('webFonts/Noah-Regular/font.woff2') format('woff2'), url('webFonts/Noah-Regular/font.woff') format('woff');
+}
+

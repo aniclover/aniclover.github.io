@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="assets/Counter.css">
+    <style>
+      body {
+        font-family: Noah-Bold;
+        font-size: 20vw;
+        background: none;
+      }
+    </style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script>
+    $(function() {
+      refreshAmount();
+
+      setInterval(refreshAmount, 3000);
+    });
+
+    function refreshAmount() {
+      $.ajax({
+        url: 'https://tiltify.com/api/v3/campaigns/50380',
+        type: 'GET',
+        dataType: 'json',
+        success: function(json) {
+          $('#amount').html('$'+json.data.amountRaised);
+        },
+        beforeSend: setHeader
+      });
+    }
+
+    function setHeader(xhr) {
+      xhr.setRequestHeader('Authorization', 'Bearer bf760a6baa86f006a1c6ee8c2a5c8fba8a1265b6f43630b5f86dc646b9bdb6ca');
+    }
+  </script>
+  </head>
+  <body>
+    <div id="amount"></div>
+  </body>
+</html>
