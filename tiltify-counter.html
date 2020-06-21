@@ -31,11 +31,11 @@
 
       function refreshAmount() {
         $.ajax({
-          url: 'https://tiltify.com/api/v3/campaigns/50380',
+          url: 'https://tiltify.com/api/v3/campaigns/66096',
           type: 'GET',
           dataType: 'json',
           success: function(json) {
-            $('#amount').html('$'+json.data.amountRaised);
+            $('#amount').html('$'+json.data.amountRaised.toFixed(2));
           },
           beforeSend: setHeader
         });
