@@ -20,8 +20,18 @@
  * © 2020 MyFonts Inc
 */
 
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3c0fec");
 
-
+@font-face {
+  font-family: 'BelweStd-Bold';
+  src: url('webFonts/BelweStd-Bold/font.woff2') format('woff2'), url('webFonts/BelweStd-Bold/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BelweStd-Condensed';
+  src: url('webFonts/BelweStd-Condensed/font.woff2') format('woff2'), url('webFonts/BelweStd-Condensed/font.woff') format('woff');
+}
+/* 
   
 @font-face {
   font-family: 'Noah-Bold';
@@ -31,4 +41,4 @@
   font-family: 'Noah-Regular';
   src: url('webFonts/Noah-Regular/font.woff2') format('woff2'), url('webFonts/Noah-Regular/font.woff') format('woff');
 }
-
+ */
