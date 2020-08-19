@@ -21,8 +21,8 @@
 */
 
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/3c0fec");
-
+/* @import url("//hello.myfonts.net/count/3c144d"); */
+  
 @font-face {
   font-family: 'BelweStd-Bold';
   src: url('webFonts/BelweStd-Bold/font.woff2') format('woff2'), url('webFonts/BelweStd-Bold/font.woff') format('woff');
@@ -30,6 +30,18 @@
 @font-face {
   font-family: 'BelweStd-Condensed';
   src: url('webFonts/BelweStd-Condensed/font.woff2') format('woff2'), url('webFonts/BelweStd-Condensed/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BelweStd-Medium';
+  src: url('webFonts/BelweStd-Medium/font.woff2') format('woff2'), url('webFonts/BelweStd-Medium/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BelweStd-LightItalic';
+  src: url('webFonts/BelweStd-LightItalic/font.woff2') format('woff2'), url('webFonts/BelweStd-LightItalic/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'BelweStd-Light';
+  src: url('webFonts/BelweStd-Light/font.woff2') format('woff2'), url('webFonts/BelweStd-Light/font.woff') format('woff');
 }
 /* 
   
