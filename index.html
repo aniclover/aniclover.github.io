@@ -5,14 +5,14 @@
     <title>AniCLover</title>
     <meta property="og:url" content ="https://aniclover.com"/>
     <meta property="og:title" content="AniCLover"/>
-    <meta property="og:description" content="Silicon Valley DJ Event featuring Anime Songs and Various Otaku Music"/>
-    <meta property="og:image" content="https://aniclover.com/assets/Banner.png" />
+    <meta property="og:description" content="AniCLover Omakase Deluxe coming soon on May 27 - Get tickets now at aniclover.com!"/>
+    <meta property="og:image" content="https://aniclover.com/assets/20220509_anicloOmakase_MayMenu.png" />
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@aniclover"/>
     <meta name="twitter:title" content="AniCLover"/>
-    <meta name="twitter:description" content="Silicon Valley DJ Event featuring Anime Songs and Various Otaku Music"/>
-    <meta name="twitter:image" content="https://aniclover.com/assets/Banner.png"/>
+    <meta name="twitter:description" content="AniCLover Omakase Deluxe coming soon on May 27 - Get tickets now at aniclover.com!"/>
+    <meta name="twitter:image" content="https://aniclover.com/assets/20220509_anicloOmakase_MayMenu.png"/>
 
     <meta name="keywords" content="anime aniclover dj vocaloid anisong anison event ticket tickets registration anikura silicon valley san francisco bay area san jose"/>
 
@@ -144,6 +144,37 @@
         }
     </style>
 
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" href="https://s3-us-west-2.amazonaws.com/assets.webconnex.com/widgets/tickets/css/app.css">
+    <style type="text/css">
+        #container th {
+            color: rgba(0,0,0,1)
+        }
+        #container td {
+            color: rgba(255, 255, 255, 1);
+            text-align: left
+        }
+
+        #container {
+            border-top: 3em solid rgba(251, 255, 189, 1);
+            margin-bottom: 80px
+        }
+
+        #container button.get-tickets {
+            color: #FFF;
+            background: #D00;
+            padding: 10px 30px;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+            font-size: 14pt;
+            white-space: nowrap;
+            float: right;
+            margin-left: 20px;
+        }
+    </style>
+
     <script src="https://kit.fontawesome.com/a1391b5195.js"></script>
 <!-- Facebook Pixel Code -->
 <script>
@@ -212,7 +243,81 @@
                 <p>
                     May 27th 2022 from 2:00 PM to 8:00 PM PDT<br>
                     <strong>21+ Only</strong> (ID & Ticket <strong>required</strong>)
-                    <iframe src="https://s3-us-west-2.amazonaws.com/assets.webconnex.com/widgets/tickets/widget.html?source=https://api.webconnex.com/v1/widgets/f89c4f693da31d74e7fd36832776a761" style="width:100%;height:320px;border:hidden;"></iframe>
+                    <div id="container">
+                        <div data-reactroot="">
+                            <table class="tickets">
+                                <tbody>
+                                    <tr>
+                                        <th class="level">Tickets</th>
+                                        <th class="price">Price</th>
+                                        <th class="fee"></th>
+                                        <th class="quantity">&nbsp;</th>
+                                    </tr>
+                                    <tr class="listing">
+                                        <td class="level">
+                                            <h3>
+                                                <!-- react-text: 20 -->General Admission (21+ only)
+                                                <!-- /react-text -->
+                                                <!-- react-text: 21 -->
+                                                <!-- /react-text -->
+                                                <!-- react-text: 22 -->
+                                                <!-- /react-text -->
+                                            </h3>
+                                        </td>
+                                        <td class="price">$10.00</td>
+                                        <td class="fee"></td>
+                                        <td class="quantity">
+                                            <form action="https://aniclover.ticketspice.com/aniclover-omakase-deluxe" method="GET" id="ticketspice" target="_blank">
+                                                <!-- <input type="hidden" name="client-id"> -->
+                                                <select name="tickets.adult">
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                    <option>10</option>
+                                                    <option>11</option>
+                                                    <option>12</option>
+                                                    <option>13</option>
+                                                    <option>14</option>
+                                                    <option>15</option>
+                                                    <option>16</option>
+                                                    <option>17</option>
+                                                    <option>18</option>
+                                                    <option>19</option>
+                                                    <option>20</option>
+                                                    <option>21</option>
+                                                    <option>22</option>
+                                                    <option>23</option>
+                                                    <option>24</option>
+                                                    <option>25</option>
+                                                </select>
+                                            </form>
+                                        </td>
+                                    </tr>
+                                    <tr class="foot">
+                                        <td colspan="4">
+                                            <!-- <a href="javascript:document.getElementById('ticketspice').submit()" class="get-tickets">Get Tickets</a> -->
+                                            <button type="submit" form="ticketspice" class="get-tickets">Get Tickets</button>
+                                            <ul class="credit-cards">
+                                                <li class="visa">Visa</li>
+                                                <li class="mastercard">Mastercard</li>
+                                                <li class="amex">AmericanExpress</li>
+                                                <li class="discover">Discover</li>
+                                            </ul>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- <iframe src="https://s3-us-west-2.amazonaws.com/assets.webconnex.com/widgets/tickets/widget.html?source=https://api.webconnex.com/v1/widgets/f89c4f693da31d74e7fd36832776a761" style="width:100%;height:320px;border:hidden;"></iframe> -->
+
                 </p>
                 <p>
                     Our talented DJ lineup will be spinning themed sets across familiar anime originals, exciting EDM genres, artist focused deep dives, and fun open format concepts!
