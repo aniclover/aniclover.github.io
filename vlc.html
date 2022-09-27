@@ -1,9 +1,16 @@
 <html>
   <script type="text/javascript">
+    var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent)
+    var isAndroid = /android/i.test(navigator.userAgent)
+
     var searchParams = new URLSearchParams(window.location.search)
     if(searchParams.has('url')) {
       var url = searchParams.get('url')
-      window.location = "vlc://"+url
+      if (isIOS) {
+        window.location = "vlc://"+url
+      } else if (isAndroid) {
+        window.location = "android-app://org.videolan.vlc/"+url
+      }
     }
   </script>
   <body>
@@ -11,8 +18,8 @@
 
     <script type="text/javascript">
       var a = document.getElementById("vlc_link")
-      a.href = "vlc://"+url
-      a.textContent = "Open "+url+" in VLC"
+      a.href = url
+      a.textContent = url
     </script>
   </body>
 </html>
