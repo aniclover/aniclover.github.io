@@ -1,0 +1,18 @@
+<html>
+  <script type="text/javascript">
+    var searchParams = new URLSearchParams(window.location.search)
+    if(searchParams.has('url')) {
+      var url = searchParams.get('url')
+      window.location = "vlc://"+url
+    }
+  </script>
+  <body>
+    <a id="vlc_link" href="sample">Not ready</a>
+
+    <script type="text/javascript">
+      var a = document.getElementById("vlc_link")
+      a.href = "vlc://"+url
+      a.textContent = "Open "+url+" in VLC"
+    </script>
+  </body>
+</html>
