@@ -1,8 +1,23 @@
 <html>
   <head>
+    <title>Book AniCLoversary 4 | Aug 26 @ DNA Lounge</title>
+
+    <meta property="og:url" content ="https://aniclover.com/book"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="AniCLoversary 4 | Aug 26 @ DNA Lounge"/>
+    <meta property="og:description" content="Anime songs, otaku EDM, & vinyl scratch wizardry feat. dj tom the s.c. from Japan"/>
+    <meta property="og:image" content="https://aniclover.com/assets/20230719 -AniCLoversary 4 - Digital Flyer.png"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@aniclover"/>
+    <meta name="twitter:title" content="AniCLoversary 4 | Aug 26 @ DNA Lounge"/>
+    <meta name="twitter:description" content="Anime songs, otaku EDM, & vinyl scratch wizardry feat. dj tom the s.c. from Japan"/>
+    <meta name="twitter:image" content="https://aniclover.com/assets/20230719 -AniCLoversary 4 - Digital Flyer.png"/>
+
+
     <script type="text/javascript">
-      var QUERY_STRING = "aff=fbad"
-      var BASE_URL = "https://www.eventbrite.com/e/aniwaves-2-powered-by-aniclover-tickets-638394173157"
+      var QUERY_STRING = "utm_campaign=acy4&utm_source=fbad"
+      var BASE_URL = "https://aniclover.com"
       
       var joinChar = '?';
       if (window.location.search) {
@@ -12,6 +27,14 @@
       const targetUrl = BASE_URL + window.location.search + joinChar + QUERY_STRING;
     </script>
 
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-N8ZJV5T');</script>
+    <!-- End Google Tag Manager -->
+  
     <!-- Meta Pixel Code -->
     <script>
       !function(f,b,e,v,n,t,s)
@@ -30,16 +53,29 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- <meta http-equiv="refresh" content="0; URL=https://www.eventbrite.com/e/aniwaves-2-powered-by-aniclover-tickets-638394173157?aff=fbad" /> -->
+    <script>
+      function redirect() {
+        if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
+          window.location = targetUrl;
+        } else {
+          setTimeout(redirect, 10);
+        }
+      }
+
+      window.addEventListener('load', function() {
+        dataLayer.push({'event': 'view_main_from_fbad', 'eventCallback': redirect, 'eventTimeout' : 2000})
+      })
+
+    </script>
+
+    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=acy4&utm_source=fbad" /> -->
   </head>
   <body>
-    <a id="link" href="https://www.eventbrite.com/e/aniwaves-2-powered-by-aniclover-tickets-638394173157?aff=fbad">Click here to continue to buy tickets</a>
+    <a id="link" href="https://aniclover.com?utm_campaign=acy4&utm_source=fbad">Click here to continue to buy tickets</a>
 
     <script type="text/javascript">
       const link = document.querySelector("#link")
-      link.setAttribute("href", targetUrl)
-
-      window.location = targetUrl;
+      link.setAttribute("href", targetUrl)      
   </script>
   </body>
 </html>

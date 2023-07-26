@@ -2,17 +2,19 @@
 <html lang="en">
 
 <head>
-    <title>AniCLover</title>
+    <title>AniCLover Main</title>
     <meta property="og:url" content ="https://aniclover.com"/>
     <meta property="og:title" content="AniCLover"/>
     <meta property="og:description" content="AniCLover - Silicon Valley DJ music event featuring anime songs and various otaku music"/>
     <meta property="og:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png" />
+    <!-- <meta property="og:image" content="https://aniclover.com/assets/20230719 -AniCLoversary 4 - Digital Flyer.png"/> -->
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@aniclover"/>
     <meta name="twitter:title" content="AniCLover"/>
     <meta name="twitter:description" content="AniCLover - Silicon Valley DJ music event featuring anime songs and various otaku music"/>
     <meta name="twitter:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png"/>
+    <!-- <meta name="twitter:image" content="https://aniclover.com/assets/20230719 -AniCLoversary 4 - Digital Flyer.png"/> -->
 
     <meta name="keywords" content="anime aniclover dj vocaloid anisong anison event ticket tickets registration anikura silicon valley san francisco bay area san jose"/>
 
@@ -129,9 +131,9 @@
             display: block;
         }
 
-        .tickets {
+        /* .tickets {
             display: none;
-        }
+        } */
     </style>
 
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet" type="text/css">
@@ -158,11 +160,11 @@
             text-decoration: none;
             text-transform: uppercase;
             font-weight: bold;
-            font-size: 36pt;
-            white-space: nowrap;
+            font-size: 24pt;
+            /* white-space: nowrap; */
             border-radius: 10px;
             /* float: none; */
-            margin-left: 20px;
+            /* margin-left: 20px; */
         }
     </style>
 
@@ -224,31 +226,49 @@
         <div class="tickets row horiz-center justify-content-center">
             <h1>Tickets</h1>
             <div class="col-lg-9">
+                <p class="d-grid gap-2">
+                    <form name="buy" action="https://www.dnalounge.com/order/" method="POST">
+                        <input type="HIDDEN" name="item" value="65543">
+                        <input type="SUBMIT" value="BUY TICKETS NOW" class="get-tickets">
+                    </form>
+                    <!-- <a href="https://aniclover.com/direct" class="get-tickets">BUY TICKETS NOW</a> -->
+                </p>
                 <p>
                     <a href="https://aniclover.com/direct">
-                        <img class="img-fluid" src="./assets/aniwaves2_2-1_eventbritebanner.png" alt="AniWaves 2 on July 3 at The Queensberry Los Angeles">
+                        <img class="img-fluid" src="./assets/20230719 -AniCLoversary 4 - Digital Flyer.png" alt="AniCLoversary 4 on Auguest 26 at DNA Lounge in San Francisco">
                     </a>
                 </p>
                 <p>
-                    We're celebrating the July 4th convention weekend in LA with an exciting crew of DJs
-                    spinning the best in anime songs and otaku music, just a short walk away from the Los Angeles Convention Center.
+                    We're celebrating AniCLover's 4th anniversary with an exciting crew of DJs
+                    spinning the best in anime songs and otaku music, at the legendary DNA Lounge in San Francisco.
                 </p><p>
-                    Featuring veteran anikura artists, naePi-YO and DJ CAESAR from TOKYO,
-                    immerse yourself in the anime nightclub
-                    atmosphere with original and remix songs from your favorite anime series,
-                    Vocaloid producers, rhythm games, and more.
-
-
+                    Coming from Japan, we have anison turntablist and scratch specialist dj tom the s.c. in the lineup,
+                    who's sure to bring exciting vinyl routines that you'll want to see up close and in-person! Plus,
+                    we have vinyl experts special guest DJ walleee and AniCLover's own NineSeventy bringing their own
+                    routines and mixes that you also will want to see up close and live!
+                </p><p>
+                    From Canada, long time friend of AniCLover and aniremix DJ extraordinaire, AdvanceRatio will be live
+                    with us in NorCal for the very first time! AniCLover DJ NiHO will be bringing us his signature EDM sound,
+                    Phosphatide will mix with rainy✩ミ in a B2B set, and CorporateTool will be opening the show.
+                </p><p>
+                    Don't miss the chance to celebrate AniCLover's 4th Anniversary live in San Francisco with us!
                 </p>
 
                 <p>
-                    The Queensberry LA<br>
-                    Monday July 3 | Doors 4:20PM<br>
-                    21+ only | Ticket required
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u9oPflgOJv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </p>
+                <p>
+                    DNA Lounge<br>
+                    Saturday, Aug 26 | Doors 4:00PM<br>
+                    18+ only | Cosplay welcome<br>
                 </p>
 
-                <p>
-                    <a href="https://aniclover.com/direct" class="get-tickets">BUY TICKETS NOW</a>
+                <p class="d-grid gap-2">
+                    <form name="buy" action="https://www.dnalounge.com/order/" method="POST">
+                        <input type="HIDDEN" name="item" value="65543">
+                        <input type="SUBMIT" value="BUY TICKETS NOW" class="get-tickets">
+                    </form>
+                    <!-- <a href="https://aniclover.com/direct" class="get-tickets">BUY TICKETS NOW</a> -->
                 </p>
             </div>
         </div>
