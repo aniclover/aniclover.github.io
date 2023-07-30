@@ -1,6 +1,19 @@
 <html>
   <head>
-    <title>Tix Redirect</title>
+    <title>Tix AniCLoversary 4 | Aug 26 @ DNA Lounge</title>
+
+    <meta property="og:url" content ="https://aniclover.com/tix"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="AniCLoversary 4 | Aug 26 @ DNA Lounge"/>
+    <meta property="og:description" content="Anime songs, otaku EDM, & vinyl scratch wizardry feat. dj tom the s.c. from Japan"/>
+    <meta property="og:image" content="https://aniclover.com/assets/20230719 -AniCLoversary 4 - Digital Flyer.png"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@aniclover"/>
+    <meta name="twitter:title" content="AniCLoversary 4 | Aug 26 @ DNA Lounge"/>
+    <meta name="twitter:description" content="Anime songs, otaku EDM, & vinyl scratch wizardry feat. dj tom the s.c. from Japan"/>
+    <meta name="twitter:image" content="https://aniclover.com/assets/20230719 -AniCLoversary 4 - Digital Flyer.png"/>
+
 
     <script type="text/javascript">
       var QUERY_STRING = "utm_campaign=acy4&utm_source=flyer"
@@ -40,6 +53,21 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
+    <script>
+      function redirect() {
+        if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
+          window.location = targetUrl;
+        } else {
+          setTimeout(redirect, 10);
+        }
+      }
+
+      window.addEventListener('load', function() {
+        dataLayer.push({'event': 'view_main_from_flyer', 'eventCallback': redirect, 'eventTimeout' : 2000})
+      })
+
+    </script>
+
     <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=acy4&utm_source=flyer" /> -->
   </head>
   <body>
@@ -47,9 +75,7 @@
 
     <script type="text/javascript">
       const link = document.querySelector("#link")
-      link.setAttribute("href", targetUrl)
-
-      window.location = targetUrl;
+      link.setAttribute("href", targetUrl)      
   </script>
   </body>
 </html>

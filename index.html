@@ -33,7 +33,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
 
     <style>
         body {
@@ -206,7 +206,8 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="0HOLvqOT"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
     <div class="container horiz-center justify-content-center">
         <!-- Main jumbotron for a primary marketing message or call to action -->
         <div class="jumbotron d-flex align-items-end">
@@ -225,15 +226,16 @@
         </div>
         <div class="tickets row horiz-center justify-content-center">
             <h1>Tickets</h1>
-            <div class="col-lg-9">
+            <div class="col-xs-12 col-lg-9">
                 <p class="d-grid gap-2">
                     <form name="buy" action="https://www.dnalounge.com/order/" method="POST">
                         <input type="HIDDEN" name="item" value="65543">
-                        <input type="SUBMIT" value="BUY TICKETS NOW" class="get-tickets">
+                        <input type="SUBMIT" value="BUY TICKETS NOW" class="get-tickets w-100">
+                        <!-- <button class="get-tickets w-100">BUY TICKETS NOW</button> -->
                     </form>
                     <!-- <a href="https://aniclover.com/direct" class="get-tickets">BUY TICKETS NOW</a> -->
                 </p>
-                <p>
+                <p class="row col-xs-12 col-lg-9 mx-auto">
                     <a href="https://aniclover.com/direct">
                         <img class="img-fluid" src="./assets/20230719 -AniCLoversary 4 - Digital Flyer.png" alt="AniCLoversary 4 on Auguest 26 at DNA Lounge in San Francisco">
                     </a>
@@ -242,21 +244,27 @@
                     We're celebrating AniCLover's 4th anniversary with an exciting crew of DJs
                     spinning the best in anime songs and otaku music, at the legendary DNA Lounge in San Francisco.
                 </p><p>
-                    Coming from Japan, we have anison turntablist and scratch specialist dj tom the s.c. in the lineup,
+                    Coming from Japan, we have anison turntablist and scratch specialist <a target="_blank" href="https://djtomthesc.com">dj tom the s.c.</a> in the lineup,
                     who's sure to bring exciting vinyl routines that you'll want to see up close and in-person! Plus,
-                    we have vinyl experts special guest DJ walleee and AniCLover's own NineSeventy bringing their own
+                    we have vinyl experts special guest <a target="_blank" href="https://twitter.com/walleee_">DJ walleee</a> and AniCLover's own
+                    <a target="_blank" href="https://twitter.com/nin7tea">NineSeventy</a> bringing their own
                     routines and mixes that you also will want to see up close and live!
                 </p><p>
-                    From Canada, long time friend of AniCLover and aniremix DJ extraordinaire, AdvanceRatio will be live
-                    with us in NorCal for the very first time! AniCLover DJ NiHO will be bringing us his signature EDM sound,
-                    Phosphatide will mix with rainy✩ミ in a B2B set, and CorporateTool will be opening the show.
+                    From Canada, long time friend of AniCLover and aniremix DJ extraordinaire, <a target="_blank" href="https://twitter.com/advanceratio">AdvanceRatio</a> will be live
+                    with us in NorCal for the very first time! AniCLover DJ <a href="https://twitter.com/korewaniho">NiHO</a> will be bringing us his signature EDM sound,
+                    <a target="_blank" href="https://twitter.com/phosphatide">Phosphatide</a> will mix with
+                    <a target="_blank" href="https://twitter.com/rainyxstar">rainy✩ミ</a> in a B2B set,
+                    and <a target="_blank" href="https://twitter.com/CorporateT00l">CorporateTool</a> will be opening the show.
                 </p><p>
                     Don't miss the chance to celebrate AniCLover's 4th Anniversary live in San Francisco with us!
                 </p>
 
-                <p>
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/u9oPflgOJv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </p>
+                <div class="row mx-auto ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/u9oPflgOJv4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="row mx-auto ratio ratio-16x9">
+                    <iframe src="https://www.youtube.com/embed/4ofCcYA8W90" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
                 <p>
                     DNA Lounge<br>
                     Saturday, Aug 26 | Doors 4:00PM<br>
@@ -266,7 +274,7 @@
                 <p class="d-grid gap-2">
                     <form name="buy" action="https://www.dnalounge.com/order/" method="POST">
                         <input type="HIDDEN" name="item" value="65543">
-                        <input type="SUBMIT" value="BUY TICKETS NOW" class="get-tickets">
+                        <input type="SUBMIT" value="BUY TICKETS NOW" class="get-tickets w-100">
                     </form>
                     <!-- <a href="https://aniclover.com/direct" class="get-tickets">BUY TICKETS NOW</a> -->
                 </p>
