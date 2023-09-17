@@ -16,8 +16,8 @@
 
 
     <script type="text/javascript">
-      var QUERY_STRING = "utm_campaign=acv2023Oct&utm_source=twitter"
-      var BASE_URL = "https://aniclover.com"
+      var QUERY_STRING = "utm_campaign=acv2023Oct&utm_source=tw"
+      var BASE_URL = "https://givebutter.com/5SObJN"
       
       var joinChar = '?';
       if (window.location.search) {
@@ -54,24 +54,26 @@
     <!-- End Meta Pixel Code -->
 
     <script>
-      function redirect() {
+      function redirect(count = 0) {
         if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
           window.location = targetUrl;
+        } else if (count > 200) {
+          window.location = targetUrl;
         } else {
-          setTimeout(redirect, 10);
+          setTimeout(redirect(count + 1), 10);
         }
       }
 
       window.addEventListener('load', function() {
-        dataLayer.push({'event': 'view_main_from_twitter', 'eventCallback': redirect, 'eventTimeout' : 2000})
+        dataLayer.push({'event': 'view_main_from_flyer', 'eventCallback': redirect, 'eventTimeout' : 2000})
       })
 
     </script>
 
-    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=acv2023Oct&utm_source=twitter" /> -->
+    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=acv2023Oct&utm_source=flyer" /> -->
   </head>
   <body>
-    <a id="link" href="https://aniclover.com?utm_campaign=acv2023Oct&utm_source=twitter">Click here to continue to buy tickets</a>
+    <a id="link" href="https://givebutter.com/5SObJN?utm_campaign=acv2023Oct&utm_source=flyer">Click here to continue to buy tickets</a>
 
     <script type="text/javascript">
       const link = document.querySelector("#link")
