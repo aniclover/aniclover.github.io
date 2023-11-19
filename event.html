@@ -1,9 +1,22 @@
 <html>
   <head>
-    <title>Eventgit  Redirect</title>
+    <title>Event AniClover | Dec 2 @ Tamper Room</title>
+
+    <meta property="og:url" content ="https://aniclover.com/event"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="AniClover | Dec 2 @ Tamper Room"/>
+    <meta property="og:description" content="Anime songs, otaku EDM, & Vocaloid"/>
+    <meta property="og:image" content="https://aniclover.com/assets/Announcement 45.png"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@aniclover"/>
+    <meta name="twitter:title" content="AniClover | Dec 2 @ Tamper Room"/>
+    <meta name="twitter:description" content="Anime songs, otaku EDM, & Vocaloid"/>
+    <meta name="twitter:image" content="https://aniclover.com/assets/Announcement 45.png"/>
+
 
     <script type="text/javascript">
-      var QUERY_STRING = "aff=direct"
+      var QUERY_STRING = "utm_campaign=acv2023Dec&utm_source=tiktok"
       var BASE_URL = "https://givebutter.com/XySxOM"
       
       var joinChar = '?';
@@ -40,16 +53,31 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- <meta http-equiv="refresh" content="0; URL=https://givebutter.com/XySxOM?aff=direct" /> -->
+    <script>
+      function redirect(count) {
+        if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
+          window.location = targetUrl;
+        } else if (count > 200) {
+          window.location = targetUrl;
+        } else {
+          setTimeout(() => {redirect(count + 1)}, 10);
+        }
+      }
+
+      window.addEventListener('load', function() {
+        dataLayer.push({'event': 'tiktok_view', 'eventCallback': ()=>{redirect(0)}, 'eventTimeout' : 2000})
+      })
+
+    </script>
+
+    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=acv2023Dec&utm_source=flyer" /> -->
   </head>
   <body>
-    <a id="link" href="https://givebutter.com/XySxOM?aff=direct">Click here to continue to buy tickets</a>
+    <a id="link" href="https://givebutter.com/XySxOM?utm_campaign=acv2023Dec&utm_source=tiktok">Click here to continue to buy tickets</a>
 
     <script type="text/javascript">
       const link = document.querySelector("#link")
-      link.setAttribute("href", targetUrl)
-
-      window.location = targetUrl;
+      link.setAttribute("href", targetUrl)      
   </script>
   </body>
 </html>
