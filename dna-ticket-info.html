@@ -7,14 +7,14 @@
     <meta property="og:title" content="AniCLover"/>
     <meta property="og:description" content="AniCLover @ DNA Lounge - Saturday, Feb 24"/>
     <meta property="og:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png" />
-    <!-- <meta property="og:image" content="https://aniclover.com/assets/2024-01-27 Announce.PNG"/> -->
+    <!-- <meta property="og:image" content="https://aniclover.com/assets/DNA Announcement 45.png"/> -->
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@aniclover"/>
     <meta name="twitter:title" content="AniCLover @ DNA Lounge - Saturday, Feb 24"/>
     <meta name="twitter:description" content="AniCLover - Silicon Valley DJ music event featuring anime songs and various otaku music"/>
     <meta name="twitter:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png"/>
-    <!-- <meta name="twitter:image" content="https://aniclover.com/assets/2024-01-27 Announce.PNG"/> -->
+    <!-- <meta name="twitter:image" content="https://aniclover.com/assets/DNA Announcement 45.png"/> -->
 
     <meta name="keywords" content="anime aniclover dj vocaloid anisong anison event ticket tickets registration anikura silicon valley san francisco bay area san jose"/>
 
@@ -35,16 +35,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 
     <style>
-        body {
-            /* padding-top: 3.5rem; */
-            /* background-color: black; */
-        }
-
         .row {
             padding-top: 3rem;
+        }
+
+        .modal {
+          color: black;
         }
         
         .jumbotron {
@@ -124,17 +123,6 @@
         .fb-page span,
         .fb-page span iframe[style] {
             width: 100% !important;
-        }
-        
-        iframe {
-            margin: 0 auto;
-            display: block;
-            text-align: center;
-            display: block;
-        }
-
-        .tickets {
-            /* display: none; */
         }
     </style>
 
@@ -223,100 +211,149 @@
     <!-- End Google Tag Manager (noscript) -->
     <div id="fb-root"></div>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v12.0" nonce="0HOLvqOT"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+
+    <script>
+      function emailSubmit(event) {
+        event.preventDefault()
+
+        let ticketSubmitForm = document.getElementById("ticket-form");
+
+        const codeApiUrl = 'https://aniclover.azurewebsites.net/api/discount-code'
+        const searchParams = new URLSearchParams(window.location.search)
+
+        const queryPayload = {
+          'source': searchParams.get("utm_source") || 'No Source',
+          'campaign': searchParams.get("utm_campaign") || 'No Campaign',
+          'email': document.getElementById("email").value,
+          'fname': document.getElementById("fname").value,
+          'lname': document.getElementById("lname").value
+        }
+        const queryParams = new URLSearchParams(queryPayload);
+
+        const jsonpUrl = addCallback(codeApiUrl+'?'+queryParams.toString())
+        console.log("JSONP URL:" + jsonpUrl)
+        
+        jsonpClient(jsonpUrl, function(err, data) {
+          console.log(data)
+          ticketSubmitForm.submit();
+        })
+      }
+
+      function addCallback(url) {
+        // The URL already has a callback
+        if (url.match(/callback=[a-z]/i)) {
+            return url;
+        }
+        return url + ("&callback=cb" + Math.random()).replace('.', '');
+      }
+    </script>
+
+    <div class="modal" id="MLModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h4>Ticket Contact Registration</h4>
+                  <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body">
+                <form id="email-form">
+                  We're in the early limited sales period! Please enter your name and email address so we can
+                  update you on our final DJ lineup and provide other show-related notifications.
+                  <div class="row">
+                    <div class="col">
+                      <label for="fname" class="form-label">First Name</label>
+                      <input type="text" id="fname" class="form-control" placeholder="First name" aria-label="First name" required>
+                    </div>
+                    <div class="col">
+                      <label for="lname" class="form-label">Last Name</label>
+                      <input type="text" id="lname" class="form-control" placeholder="Last name" aria-label="Last name" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <button class="btn btn-danger btn-lg" type="submit">Buy Tickets</button>
+                  </div>
+                </form>
+                <script>
+                  document.getElementById("email-form").addEventListener("submit", emailSubmit)
+                </script>
+              </div>
+          </div>
+      </div>
+    </div>
 
     <div class="container justify-content-center">
-        <!-- Main jumbotron for a primary marketing message or call to action -->
-        <!-- <div class="jumbotron d-flex align-items-end">
-
-            <div class="container img-wrapper">
-                <img class="img-fluid" src="./assets/anicloverbanner1500x500.png">
-                <p class="btn-group img-overlay">
-                    <a class="btn" href="https://twitter.com/aniclover" target="_blank"><i class="fab fa-twitter"></i></a>
-                    <a class="btn" href="https://www.twitch.tv/anicloverclub" target="_blank"><i class="fab fa-twitch"></i></a>
-                    <a class="btn" href="https://aniclover.com/discord" target="_blank"><i class="fab fa-discord"></i></a>
-                    <a class="btn" href="https://www.instagram.com/anicloverclub/" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a class="btn" href="https://www.facebook.com/AniCLoverClub" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                </p>
+      <div class="tickets row">
+          <p>
+            <div class="horiz-center">
+              <h1>AniCLover @ DNA Lounge</h1>
+              Saturday, February 24 | 7:00PM Start
             </div>
-        </div> -->
-        <script>
-          function getTicketsClick() {
-            let ticketSubmitForm = document.getElementById("ticket-form");
+          </p>
 
-            const codeApiUrl = 'https://aniclover.azurewebsites.net/api/discount-code'
+          <div class="col-xs-12 col-lg-3 sticky-top bg-dark bg-opacity-75">
+            <div class="sticky-top">
+              <dl class="row">
+                <dt class="col-4">Early</dt>
+                <dd class="col-8">$22 (limited qty)</dd>
 
-            const queryPayload = {
-              'source': 'No Source',
-              'campaign': 'No Campaign',
-              'email': 'sample@example.com',
-              'fname': 'First',
-              'lname': 'Last'
-            }
-            const queryParams = new URLSearchParams(queryPayload);
+                <dt class="col-4">Advance</dt>
+                <dd class="col-8">$26</dd>
 
-            const jsonpUrl = addCallback(codeApiUrl+'?'+queryParams.toString())
-            
-            jsonpClient(jsonpUrl, function(err, data) {
-              console.log(data)
-            })
+                <dt class="col-4">Door</dt>
+                <dd class="col-8">$33</dd>
+              </dl>
+              <form id="ticket-form" name="buy" action="https://www.dnalounge.com/order/" method="POST">
+                <input type="HIDDEN" name="item" value="66135">
+              </form>
 
-            // ticketSubmitForm.submit();
-          }
-
-          function addCallback(url) {
-            // The URL already has a callback
-            if (url.match(/callback=[a-z]/i)) {
-                return url;
-            }
-            return url + ("&callback=cb" + Math.random()).replace('.', '');
-          }
-        </script>
-        <div class="tickets row">
-            <p>
-              <div class="horiz-center">
-                <h1>AniCLover @ DNA Lounge</h1>
-                Saturday, February 24 | 7:00PM Start
-              </div>
-            </p>
-
-            <div class="col-xs-12 col-lg-3 sticky-top bg-dark bg-opacity-75">
-              <div class="sticky-top">
-                <dl class="row">
-                  <dt class="col-4">Early</dt>
-                  <dd class="col-8">$22 (limited qty)</dd>
-
-                  <dt class="col-4">Advance</dt>
-                  <dd class="col-8">$26</dd>
-
-                  <dt class="col-4">Door</dt>
-                  <dd class="col-8">$33</dd>
-                </dl>
-                <form id="ticket-form" name="buy" action="http://www.dnalounge.com/order/" method="POST">
-                  <input type="HIDDEN" name="item" value="66135">
-                </form>
-                <button onclick="getTicketsClick()" class="btn btn-danger btn-lg btn-block w-100">GET TICKETS</button>                    
-              </div>
+              <button class="btn btn-danger btn-lg btn-block w-100" type="button" data-bs-toggle="modal" data-bs-target="#MLModal">
+                BUY TICKETS
+              </button>
             </div>
-            <div class="col-xs-12 col-lg-9">
-                <p>
-                    <a href="https://aniclover.com/direct">
-                        <img class="img-fluid" src="./assets/2024-01-27 Announce.PNG" alt="AniCLover @ Tamper Room Jan 27">
-                    </a>
-                </p>
-                <p>
-                    Join us for AniCLover: Dark Roast at the Tamper Room in Fremont! In this "boiler room" style format,
-                    we'll have DJs in the center of the action and the audience gathered all around the decks, with an
-                    exciting lineup spinning the best in anime songs and otaku music for an action packed yet intimate
-                    night of music.
-                </p>
-                <p>
-                    Tamper Room in Fremont<br>
-                    January 27, 2024<br>
-                    Doors 7:30PM<br>
-                </p>
-            </div>
-        </div>
+          </div>
+          
+          <div class="col-xs-12 col-lg-9">
+              <p>
+                  <a href="https://aniclover.com/direct">
+                      <img class="img-fluid" src="./assets/DNA Announcement 45.png" alt="AniCLover @ DNA Lounge Feb 24">
+                  </a>
+              </p>
+              <p>
+                  AniCLover is back from Japan with an all-star lineup of DJs spinning the best in
+                  anime songs, remixes, and otaku music! Don't miss the excitement as we bring the Tokyo
+                  anikura experience right here to the Bay Area!
+              </p>
+              <p>
+                Featuring DJs:
+                <ul>
+                  <li>Assertive</li>
+                  <li>Synthion</li>
+                  <li>asid</li>
+                  <li>CorporateTool</li>
+                  <li>cozzie</li>
+                  <li>nichi</li>
+                  <li>rainy☆ミ</li>
+                  <li>zalas</li>
+                </ul>
+              </p>
+              <p>
+                  Above DNA in San Francisco<br>
+                  Saturday, February 24, 2024<br>
+                  7PM - Midnight<br>
+                  18+ only
+              </p>
+          </div>
+      </div>
         
         <div class="row">
             <h1>Recent News</h1>
@@ -329,30 +366,10 @@
                 e=d.getElementsByTagName(s)[0];e.parentNode.insertBefore(i, e);
                 })();
                 </script>
-            <!-- <div class="col-md-6">
-                <a class="twitter-timeline" href="https://twitter.com/AniCLover" data-theme="dark" data-width="100%" data-height="600px">Tweets by AniCLover</a>
-                <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-            </div>
-            <div class="col-md-6">
-                <div class="fb-page" data-href="https://www.facebook.com/AniCLoverClub/" data-tabs="timeline" data-width="500px" data-height="600px" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true">
-                    <blockquote cite="https://www.facebook.com/AniCLoverClub/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/AniCLoverClub/">AniClover</a></blockquote>
-                </div>
-            </div> -->
         </div>
     </div>
 
     <hr>
-
-    </div>
-    <!-- /container -->
-
-
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>
