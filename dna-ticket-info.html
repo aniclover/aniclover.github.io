@@ -6,15 +6,15 @@
     <meta property="og:url" content ="https://aniclover.com/dna-ticket-info.html"/>
     <meta property="og:title" content="AniCLover"/>
     <meta property="og:description" content="AniCLover @ DNA Lounge - Saturday, Feb 24"/>
-    <meta property="og:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png" />
-    <!-- <meta property="og:image" content="https://aniclover.com/assets/DNA Announcement 45.png"/> -->
+    <!-- <meta property="og:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png" /> -->
+    <meta property="og:image" content="https://aniclover.com/assets/DNA Announcement 45.jpg"/>
 
     <meta name="twitter:card" content="summary_large_image"/>
     <meta name="twitter:site" content="@aniclover"/>
     <meta name="twitter:title" content="AniCLover @ DNA Lounge - Saturday, Feb 24"/>
     <meta name="twitter:description" content="AniCLover - Silicon Valley DJ music event featuring anime songs and various otaku music"/>
-    <meta name="twitter:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png"/>
-    <!-- <meta name="twitter:image" content="https://aniclover.com/assets/DNA Announcement 45.png"/> -->
+    <!-- <meta name="twitter:image" content="https://aniclover.com/assets/anicloverbanner1500x500.png"/> -->
+    <meta name="twitter:image" content="https://aniclover.com/assets/DNA Announcement 45.jpg"/>
 
     <meta name="keywords" content="anime aniclover dj vocaloid anisong anison event ticket tickets registration anikura silicon valley san francisco bay area san jose"/>
 
@@ -160,6 +160,9 @@
             font-weight: bold;
             font-size: 20pt;
         }
+        .discount-code {
+          display: none;
+        }
     </style>
 
     <script src="https://kit.fontawesome.com/a1391b5195.js"></script>
@@ -218,8 +221,6 @@
       function emailSubmit(event) {
         event.preventDefault()
 
-        let ticketSubmitForm = document.getElementById("ticket-form");
-
         const codeApiUrl = 'https://aniclover.azurewebsites.net/api/discount-code'
         const searchParams = new URLSearchParams(window.location.search)
 
@@ -236,9 +237,12 @@
         console.log("JSONP URL:" + jsonpUrl)
         
         jsonpClient(jsonpUrl, function(err, data) {
-          console.log(data)
-          ticketSubmitForm.submit();
+          console.log(data.code)
+          document.getElementById("discount-code").textContent = data.code.trim()
         })
+
+        document.getElementById("email-form").style.display = 'none';
+        document.getElementById("discount-code-area").style.display = 'block';
       }
 
       function addCallback(url) {
@@ -247,6 +251,11 @@
             return url;
         }
         return url + ("&callback=cb" + Math.random()).replace('.', '');
+      }
+
+      function ticketSubmit() {
+        let ticketSubmitForm = document.getElementById("ticket-form");
+        ticketSubmitForm.submit();
       }
     </script>
 
@@ -260,9 +269,9 @@
                   </button>
               </div>
               <div class="modal-body">
-                <form id="email-form">
-                  We're in the early limited sales period! Please enter your name and email address so we can
-                  update you on our final DJ lineup and provide other show-related notifications.
+                <form class="email-form" id="email-form">
+                  <p>Please enter your name and email address so we can provide DJ updates and provide other show-related notifications.</p>
+                  <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase!</strong></p>
                   <div class="row">
                     <div class="col">
                       <label for="fname" class="form-label">First Name</label>
@@ -283,8 +292,29 @@
                     <button class="btn btn-danger btn-lg" type="submit">Buy Tickets</button>
                   </div>
                 </form>
+                <div id="discount-code-area" class="row horiz-center justify-center discount-code">
+                  Discount Code
+                  <h1 class="display-6">
+                    <span id="discount-code" class="user-select-all">...loading code...</span>
+                    <button id="copyButton" class="btn btn-primary btn-md" title="Click to copy" onclick="copyToClipboard()">
+                      <i class="px-2 fa fa-clipboard" aria-hidden="true"></i>
+                    </button>
+                  </h1>
+                  <button class="btn btn-danger btn-lg" onclick="ticketSubmit()">Buy Tickets</button>
+                </div>
                 <script>
                   document.getElementById("email-form").addEventListener("submit", emailSubmit)
+
+                  const copyToClipboard = async () => {
+                    try {
+                      const element = document.getElementById('discount-code');
+                      await navigator.clipboard.writeText(element.textContent);
+                      // Optional: Provide feedback or perform additional actions upon successful copy
+                    } catch (error) {
+                      console.error("Failed to copy to clipboard:", error);
+                      // Optional: Handle and display the error to the user
+                    }
+                  };
                 </script>
               </div>
           </div>
@@ -303,11 +333,11 @@
           <div class="col-xs-12 col-lg-3 sticky-top bg-dark bg-opacity-75">
             <div class="sticky-top">
               <dl class="row">
-                <dt class="col-4">Early</dt>
-                <dd class="col-8">$22 (limited qty)</dd>
+                <dt class="col-4"><del>Early</del></dt>
+                <dd class="col-8"><del>$22 (SOLD OUT)</del></dd>
 
                 <dt class="col-4">Advance</dt>
-                <dd class="col-8">$26</dd>
+                <dd class="col-8">$26 (buy now for discount code)</dd>
 
                 <dt class="col-4">Door</dt>
                 <dd class="col-8">$33</dd>
@@ -325,7 +355,7 @@
           <div class="col-xs-12 col-lg-9">
               <p>
                   <a href="https://aniclover.com/direct">
-                      <img class="img-fluid" src="./assets/DNA Announcement 45.png" alt="AniCLover @ DNA Lounge Feb 24">
+                      <img class="img-fluid" src="./assets/DNA Announcement 45.jpg" alt="AniCLover @ DNA Lounge Feb 24">
                   </a>
               </p>
               <p>
@@ -333,6 +363,7 @@
                   anime songs, remixes, and otaku music! Don't miss the excitement as we bring the Tokyo
                   anikura experience right here to the Bay Area!
               </p>
+              <p>Cosplay is welcome!</p>
               <p>
                 Featuring DJs:
                 <ul>
@@ -340,7 +371,7 @@
                   <li>Synthion</li>
                   <li>asid</li>
                   <li>CorporateTool</li>
-                  <li>cozzie</li>
+                  <li>Cozzie</li>
                   <li>nichi</li>
                   <li>rainy☆ミ</li>
                   <li>zalas</li>
