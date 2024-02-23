@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name=”apple-mobile-web-app-capable” content=”yes “>
+        <style type="text/css">
+            html, body {
+                margin: 0;
+                padding: 0;
+                background-color: black;
+                color: white;
+                display: flex;
+                height: 100%;
+                width: 100%;
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 3vw;
+                /* overflow: hidden; */
+            }
+
+            #chat {
+                border : 0;
+                width: 500px;
+            }
+
+            #timer {
+                flex-grow: 1;
+                padding-top: 100px;
+                display: flex;
+                text-align: center;
+                flex-direction: column;
+            }
+
+            #countdown {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-grow: 1;
+                font-size: 24vw;
+                font-family: monospace;
+                /* display: inline-block; */
+                /* white-space: nowrap; */
+            }
+
+            #current {
+                color: green;
+            }
+
+            #next {
+                color: yellow;
+            }
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.4.2/fitty.min.js" integrity="sha512-9obshdJ5H00w+dWuKmWMEYPjyxNlFUpXj5XaWekCigdcaFKi6HWo7A7ko0rSBTP3zW2yWPdiAiCcaiziyvYKbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    </head>
+    <body data-bs-theme="dark">
+        <iframe id="chat" src="https://twitch.tv/embed/anicloverclub/chat?parent=aniclover.com&darkpopout=1"></iframe>
+        <div id="timer">
+            <div>Current: <span id="current"></span> Next: <span id="next"></span></div>
+            <div id="countdown" >50:00</div>
+        </div>
+        <script type="text/javascript">
+            // 18:40	corporatetool
+            // 19:20	asid
+            // 20:00	nichi
+            // 20:40	rainy
+            // 21:20	cozzie
+            // 22:00	Synthion
+            // 22:40	Assertive b2b Synthion
+            // 23:20	zalas
+            const timetable = [
+                {
+                    name: "Pre-show",
+                    start: 0,
+                },
+                {
+                    name: "corporatetool",
+                    start: new Date('2024-02-24T18:40:00-08:00').getTime(),
+                },
+                {
+                    name: "asid",
+                    start: new Date('2024-02-24T19:20:00-08:00').getTime(),
+                },
+                {
+                    name: "nichi",
+                    start: new Date('2024-02-24T20:00:00-08:00').getTime(),
+                },
+                {
+                    name: "rainy",
+                    start: new Date('2024-02-24T20:40:00-08:00').getTime(),
+                },
+                {
+                    name: "cozzie",
+                    start: new Date('2024-02-24T21:20:00-08:00').getTime(),
+                },
+                {
+                    name: "Synthion",
+                    start: new Date('2024-02-24T22:00:00-08:00').getTime(),
+                },
+                {
+                    name: "Assertive b2b Synthion",
+                    start: new Date('2024-02-24T22:40:00-08:00').getTime(),
+                },
+                {
+                    name: "zalas",
+                    start: new Date('2024-02-24T23:20:00-08:00').getTime(),
+                },
+                {
+                    name: "End-of-show",
+                    start: new Date('2024-02-25T00:00:00-08:00').getTime(),
+                },
+            ];
+
+            // var fit = fitty('#countdown', {
+            //     // multiLine: false
+            // })
+
+
+            setInterval(() => {
+                const currentTime = Date.now();
+                let currentIdx = 0;
+                for (let i = 0; i < timetable.length; i++) {
+                    if (timetable[i].start > currentTime)
+                        break
+                    currentIdx = i;
+                }
+                document.getElementById("current").innerText = timetable[currentIdx].name;
+                if (currentIdx != timetable.length - 1) {
+                    document.getElementById("next").innerText = timetable[currentIdx + 1].name;
+                    const durationToStart = (timetable[currentIdx + 1].start - currentTime) / 1000;
+                    const minutesToStart = Math.floor(durationToStart / 60);
+                    const secondsToStart = Math.floor(durationToStart % 60);
+                    document.getElementById("countdown").innerText =
+                        `${minutesToStart.toString().padStart(2, "0")}:${secondsToStart.toString().padStart(2, "0")}`;
+                    if (minutesToStart < 5) {
+                        document.getElementById("countdown").style["color"] = "orange";
+                    } else {
+                        document.getElementById("countdown").style["color"] = null;
+                    }
+                } else {
+                    document.getElementById("next").innerText = "none";
+                    document.getElementById("countdown").innerText = "00:00";
+                }
+                // fitty.fitAll()
+            }, 1000);
+        </script>
+    </body>
+</html>
