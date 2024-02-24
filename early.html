@@ -1,10 +1,23 @@
 <html>
   <head>
-    <title>Early Redirect</title>
+    <title>Buy AniClover | Feb 24 @ DNA Lounge</title>
+
+    <!-- <meta property="og:url" content ="https://aniclover.com/early"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="AniClover | Feb 24 @ DNA Lounge"/>
+    <meta property="og:description" content="Anime songs, otaku EDM, & Vocaloid"/>
+    <meta property="og:image" content="https://aniclover.com/assets/DNA Announcement 45.jpg"/>
+
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:site" content="@aniclover"/>
+    <meta name="twitter:title" content="AniClover | Feb 24 @ DNA Lounge"/>
+    <meta name="twitter:description" content="Anime songs, otaku EDM, & Vocaloid"/>
+    <meta name="twitter:image" content="https://aniclover.com/assets/DNA Announcement 45.jpg"/> -->
+
 
     <script type="text/javascript">
-      var QUERY_STRING = "aff=early"
-      var BASE_URL = "https://aniclover.com/dna-ticket-info.html"
+      var QUERY_STRING = "utm_campaign=voca2024Apr&utm_source=early"
+      var BASE_URL = "https://aniclover.ticketspice.com/vocaclover"
       
       var joinChar = '?';
       if (window.location.search) {
@@ -40,16 +53,27 @@
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com/dna-ticket-info.html?aff=early" /> -->
+    <script>
+      function redirect(count) {
+        console.log("Redirect count: "+count)
+        if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
+          window.location = targetUrl;
+        } else if (count > 20) {
+          window.location = targetUrl;
+        } else {
+          setTimeout(() => {redirect(count + 1)}, 100);
+        }
+      }
+    </script>
+
+    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=voca2024Apr&utm_source=early" /> -->
   </head>
   <body>
-    <a id="link" href="https://aniclover.com/dna-ticket-info.html?aff=early">Click here to continue to buy tickets</a>
+    <a id="link" href="https://aniclover.ticketspice.com/vocaclover?utm_campaign=voca2024Apr&utm_source=early">Click here to continue to buy tickets</a>
 
     <script type="text/javascript">
       const link = document.querySelector("#link")
-      link.setAttribute("href", targetUrl)
-
-      window.location = targetUrl;
+      link.setAttribute("href", targetUrl)      
   </script>
   </body>
 </html>
