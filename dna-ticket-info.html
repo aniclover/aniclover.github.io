@@ -216,8 +216,9 @@
           document.getElementById("discount-code").textContent = data.code.trim()
         })
 
-        document.getElementById("email-form").style.display = 'none';
-        document.getElementById("discount-code-area").style.display = 'block';
+        // document.getElementById("email-form").style.display = 'none';
+        // document.getElementById("discount-code-area").style.display = 'block';
+        ticketSubmit();
       }
 
       function addCallback(url) {
@@ -246,7 +247,8 @@
               <div class="modal-body">
                 <form class="email-form" id="email-form">
                   <p>Please enter your name and email address so we can provide DJ updates and other show-related notifications.</p>
-                  <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase!</strong></p>
+                  <!-- <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase!</strong></p> -->
+                  <p><strong>Buy tickets now while discounted early advance pricing is still available!</strong></p>
                   <div class="row">
                     <div class="col">
                       <label for="fname" class="form-label">First Name</label>
@@ -300,25 +302,25 @@
       <div class="tickets row">
           <p>
             <div class="horiz-center">
-              <h1>AniCLover @ DNA Lounge</h1>
-              Saturday, February 24 | 7:00PM Start
+              <h1>AniCLover: YoaCLobi @ DNA Lounge</h1>
+              Sunday, April 21 | 10:00PM Start
             </div>
           </p>
 
           <div class="col-xs-12 col-lg-3 sticky-top bg-dark bg-opacity-75">
             <div class="sticky-top">
               <dl class="row">
-                <dt class="col-4"><del>Early</del></dt>
-                <dd class="col-8"><del>$22 (SOLD OUT)</del></dd>
+                <dt class="col-4">Early</dt>
+                <dd class="col-8">$22 (limited qty)</dd>
 
                 <dt class="col-4">Advance</dt>
-                <dd class="col-8">$26 (buy now for discount code)</dd>
+                <dd class="col-8">$26</dd>
 
                 <dt class="col-4">Door</dt>
                 <dd class="col-8">$33</dd>
               </dl>
               <form id="ticket-form" name="buy" action="https://www.dnalounge.com/order/" method="POST">
-                <input type="HIDDEN" name="item" value="66135">
+                <input type="HIDDEN" name="item" value="66301">
               </form>
 
               <button class="btn btn-danger btn-lg btn-block w-100" type="button" data-bs-toggle="modal" data-bs-target="#MLModal">
@@ -336,32 +338,29 @@
           <div class="col-xs-12 col-lg-9">
               <p>
                   <a href="https://aniclover.com/direct">
-                      <img class="img-fluid" src="./assets/Vocaclover Announcement 45.png" alt="AniCLover @ DNA Lounge Feb 24">
+                      <img class="img-fluid" src="./assets/DNA Announcement 45.jpg" alt="AniCLover @ DNA Lounge Feb 24">
                   </a>
               </p>
               <p>
-                  AniCLover is back from Japan with an all-star lineup of DJs spinning the best in
-                  anime songs, remixes, and otaku music! Don't miss the excitement as we bring the Tokyo
-                  anikura experience right here to the Bay Area!
+                  Are you going to see YOASOBI in San Francisco? Or maybe you couldn't get tickets?
+                  Either way, join us at the DNA Lounge for an afterparty where we'll celebrate everything YOASOBI, plus J-Pop,
+                  Utaite, Vocaloid, and anisong remixes in honor of Ayase and Ikura's past and current projects!
               </p>
               <p>Cosplay is welcome!</p>
               <p>
                 Featuring DJs:
                 <ul>
-                  <li>Assertive</li>
-                  <li>Synthion</li>
-                  <li>asid</li>
+                  <li>Similar Outskirts</li>
                   <li>CorporateTool</li>
-                  <li>Cozzie</li>
                   <li>nichi</li>
                   <li>rainy☆ミ</li>
-                  <li>zalas</li>
+                  <li>refu</li>
                 </ul>
               </p>
               <p>
                   Above DNA in San Francisco<br>
-                  Saturday, February 24, 2024<br>
-                  7PM - Midnight<br>
+                  Sunday, April 21, 2024<br>
+                  10pm - 2am<br>
                   18+ only
               </p>
           </div>
