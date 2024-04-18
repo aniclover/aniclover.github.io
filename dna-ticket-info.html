@@ -180,6 +180,24 @@
 /></noscript>
 <!-- End Facebook Pixel Code -->
 
+<!-- Event snippet for Submit DNA Ticket Info conversion page
+In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
+<script>
+  function gtag_report_conversion_submit(url) {
+    var callback = function () {
+      // if (typeof(url) != 'undefined') {
+      //   window.location = url;
+      // }
+      ticketSubmit();
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-11151547094/l8QpCNOMhKgZENa1vMUp',
+        'event_callback': callback
+    });
+    return false;
+  }
+  </script>  
+
 </head>
 
 <body class="text-light bg-dark">
@@ -214,10 +232,14 @@
         jsonpClient(jsonpUrl, function(err, data) {
           console.log(data.code)
           document.getElementById("discount-code").textContent = data.code.trim()
+
         })
 
         // document.getElementById("email-form").style.display = 'none';
         // document.getElementById("discount-code-area").style.display = 'block';
+
+        // Comment out when displaying code
+        gtag_report_conversion_submit();
         ticketSubmit();
       }
 
