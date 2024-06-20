@@ -1,8 +1,8 @@
 <html>
   <head>
-    <title>Event AniWaves 3 | July 6 in LA @ The Queensberry|AniWaves 3 | July 6 in LA @ The Queensberry</title>
+    <title>Tiktok AniWaves 3 | July 6 in LA @ The Queensberry|AniWaves 3 | July 6 in LA @ The Queensberry</title>
 
-    <meta property="og:url" content ="https://aniclover.com/event"/>
+    <meta property="og:url" content ="https://aniclover.com/tiktok"/>
     <meta property="og:type" content="website"/>
     <meta property="og:title" content="AniWaves 3 | July 6 in LA @ The Queensberry|AniWaves 3 | July 6 in LA @ The Queensberry"/>
     <meta property="og:description" content="Anime songs, otaku EDM, & Vocaloid"/>
@@ -16,7 +16,7 @@
 
 
     <script type="text/javascript">
-      var QUERY_STRING = "utm_campaign=aniwaves2024July&utm_source=ytad"
+      var QUERY_STRING = "utm_campaign=aniwaves2024July&utm_source=tiktok"
       var BASE_URL = "https://givebutter.com/KnHxCa"
       
       var joinChar = '?';
@@ -55,25 +55,26 @@
 
     <script>
       function redirect(count) {
+        console.log("Redirect count: "+count)
         if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
           window.location = targetUrl;
-        } else if (count > 200) {
+        } else if (count > 20) {
           window.location = targetUrl;
         } else {
-          setTimeout(() => {redirect(count + 1)}, 10);
+          setTimeout(() => {redirect(count + 1)}, 100);
         }
       }
 
       window.addEventListener('load', function() {
-        dataLayer.push({'event': 'ytad_view', 'eventCallback': ()=>{redirect(0)}, 'eventTimeout' : 2000})
+        dataLayer.push({'event': 'tiktok_view', 'eventCallback': ()=>{redirect(0)}, 'eventTimeout' : 2000})
       })
 
     </script>
 
-    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=aniwaves2024July&utm_source=ytad" /> -->
+    <!-- <meta http-equiv="refresh" content="0; URL=https://aniclover.com?utm_campaign=aniwaves2024July&utm_source=tiktok" /> -->
   </head>
   <body>
-    <a id="link" href="https://givebutter.com/KnHxCa?utm_campaign=aniwaves2024July&utm_source=ytad">Click here to continue to buy tickets</a>
+    <a id="link" href="https://givebutter.com/KnHxCa?utm_campaign=aniwaves2024July&utm_source=tiktok">Click here to continue to buy tickets</a>
 
     <script type="text/javascript">
       const link = document.querySelector("#link")
