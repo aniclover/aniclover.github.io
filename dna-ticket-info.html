@@ -237,12 +237,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
         })
 
-        // document.getElementById("email-form").style.display = 'none';
-        // document.getElementById("discount-code-area").style.display = 'block';
+        document.getElementById("email-form").style.display = 'none';
+        document.getElementById("discount-code-area").style.display = 'block';
 
         // Comment out when displaying code
-        // gtag_reporgitt_conversion_submit();
-        ticketSubmit();
+        // ticketSubmit();
       }
 
       function addCallback(url) {
@@ -271,8 +270,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               <div class="modal-body">
                 <form class="email-form" id="email-form">
                   <p>Please enter your name and email address so we can provide DJ updates and other show-related notifications.</p>
-                  <!-- <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase!</strong></p> -->
-                  <p><strong>Buy tickets now while discounted early advance pricing is still available!</strong></p>
+                  <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase!</strong></p>
+                  <!-- <p><strong>Buy tickets now while discounted early advance pricing is still available!</strong></p> -->
                   <div class="row">
                     <div class="col">
                       <label for="fname" class="form-label">First Name</label>
