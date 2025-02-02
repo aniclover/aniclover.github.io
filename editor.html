@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name=”apple-mobile-web-app-capable” content=”yes “>
+        <style type="text/css">
+            html, body {
+                height: 99%;
+                width: 99%;
+            }
+
+            html, body, #editor, #status {
+                background-color: black;
+                color: white;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            #status {
+                display: flex;
+                margin: 10px;
+                font-family: Helvetica, Arial, sans-serif;
+                font-size: 24px;
+            }
+
+            #editor {
+                width: 100%;
+                display: flex;
+                flex-grow: 1;
+            }
+        </style>
+    </head>
+    <body data-bs-theme="dark">
+        <textarea id="editor"></textarea>
+        <a id="status"></a>
+        <script type="text/javascript">
+            const exampleTimetable = [
+                {
+                    "name": "Pre-show",
+                    "start": 1732287600000
+                },
+                {
+                    "name": "naePi-YO",
+                    "start": 1735800000000
+                },
+                {
+                    "name": "Isacarius",
+                    "start": 1735802400000
+                },
+                {
+                    "name": "tonio",
+                    "start": 1735804800000
+                },
+                {
+                    "name": "Nia",
+                    "start": 1735807200000
+                },
+                {
+                    "name": "Choco",
+                    "start": 1735809600000
+                },
+                {
+                    "name": "VITICZ",
+                    "start": 1735812000000
+                },
+                {
+                    "name": "HYPERLOCK",
+                    "start": 1735814400000
+                },
+                {
+                    "name": "Nemonoika",
+                    "start": 1735816800000
+                },
+                {
+                    "name": "Mayonazy",
+                    "start": 1735819200000
+                },
+                {
+                    "name": "Alicemetix",
+                    "start": 1735821600000
+                },
+                {
+                    "name": "picco",
+                    "start": 1735824000000
+                },
+                {
+                    "name": "AdvanceRatio",
+                    "start": 1735826400000
+                },
+                {
+                    "name": "6Tan",
+                    "start": 1735828800000
+                },
+                {
+                    "name": "Assertive",
+                    "start": 1735831200000
+                },
+                {
+                    "name": "mochiya00",
+                    "start": 1735833600000
+                },
+                {
+                    "name": "DAYOx2",
+                    "start": 1735836000000
+                },
+                {
+                    "name": "anoueo",
+                    "start": 1735838400000
+                },
+                {
+                    "name": "Synthion",
+                    "start": 1735840800000
+                },
+                {
+                    "name": "Vanille A",
+                    "start": 1735843200000
+                },
+                {
+                    "name": "nichi",
+                    "start": 1735845600000
+                },
+                {
+                    "name": "Closing Statements",
+                    "start": 1735848000000
+                }
+            ];
+
+            const editorElement = document.getElementById("editor");
+            const statusElement = document.getElementById("status");
+
+            function handleError(e) {
+                window.location.hash = encodeURIComponent(editorElement.value);
+                statusElement.innerText = `Failed to parse timetable: ${e}. Click to load example timetable instead.`;
+                statusElement.setAttribute("href", `#${encodeURIComponent(JSON.stringify(exampleTimetable))}`);
+            }
+
+            function updateTimetableLink() {
+                try {
+                    const timetable = JSON.parse(editorElement.value);
+
+                    if (!Array.isArray(timetable)) {
+                        throw new Error("Timetable must be an array of {name: string, start: number} objects.");
+                    }
+
+                    for (const slot of timetable) {
+                        if (typeof slot["name"] !== "string" || typeof slot["start"] !== "number") {
+                            throw new Error("Timetable must be an array of {name: string, start: number} objects.");
+                        }
+                    }
+
+                    window.location.hash = `#${encodeURIComponent(JSON.stringify(timetable))}`;
+                    statusElement.innerText = "Valid timetable. Click to go to timer.";
+                    statusElement.setAttribute("href", `interval-timer.html${window.location.hash}`);
+                } catch(e) {
+                    handleError(e);
+                }
+            }
+
+            editorElement.addEventListener("input", updateTimetableLink);
+
+            function initialParse() {
+                const rawTimetable = decodeURIComponent(window.location.hash.substring(1));
+            
+                try {
+                    const prettyJSON = JSON.stringify(JSON.parse(rawTimetable), null, 2);
+                    editorElement.value = prettyJSON;
+                    updateTimetableLink();
+                } catch (e) {
+                    editorElement.value = rawTimetable;
+                    handleError(e);
+                }
+            }
+
+            window.addEventListener("hashchange", initialParse);
+            initialParse();
+        </script>
+    </body>
+</html>

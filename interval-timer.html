@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name=”apple-mobile-web-app-capable” content=”yes “>
+        <meta name="apple-mobile-web-app-capable" content="yes">
         <style type="text/css">
             html, body {
                 margin: 0;
@@ -13,7 +13,6 @@
                 width: 100%;
                 font-family: Helvetica, Arial, sans-serif;
                 font-size: 3vw;
-                /* overflow: hidden; */
             }
 
             #chat {
@@ -36,8 +35,6 @@
                 flex-grow: 1;
                 font-size: 24vw;
                 font-family: monospace;
-                /* display: inline-block; */
-                /* white-space: nowrap; */
             }
 
             #current {
@@ -48,120 +45,20 @@
                 color: yellow;
             }
         </style>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/fitty/2.4.2/fitty.min.js" integrity="sha512-9obshdJ5H00w+dWuKmWMEYPjyxNlFUpXj5XaWekCigdcaFKi6HWo7A7ko0rSBTP3zW2yWPdiAiCcaiziyvYKbw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     </head>
     <body data-bs-theme="dark">
         <iframe id="chat" src="https://twitch.tv/embed/anicloverclub/chat?parent=aniclover.com&darkpopout=1"></iframe>
         <div id="timer">
             <div>Current: <span id="current"></span> Next: <span id="next"></span></div>
-            <div id="countdown" >50:00</div>
+            <div id="countdown" >00:00</div>
+            <a id="editorlink">Edit Timetable</a>
         </div>
         <script type="text/javascript">
-            // 18:40	corporatetool
-            // 19:20	asid
-            // 20:00	nichi
-            // 20:40	rainy
-            // 21:20	cozzie
-            // 22:00	Synthion
-            // 22:40	Assertive b2b Synthion
-            // 23:20	zalas
-            const timetable = [
-                {
-                    name: "Pre-show",
-                    start: new Date('2024-11-23T00:00:00+09:00').getTime(),
-                },
-                {
-                    name: "naePi-YO",
-                    start: new Date('2025-01-02T15:40:00+09:00').getTime(),
-                },
-                {
-                    name: "Isacarius",
-                    start: new Date('2025-01-02T16:20:00+09:00').getTime(),
-                },
-                {
-                    name: "tonio",
-                    start: new Date('2025-01-02T17:00:00+09:00').getTime(),
-                },
-                {
-                    name: "Nia",
-                    start: new Date('2025-01-02T17:40:00+09:00').getTime(),
-                },
-                {
-                    name: "Choco",
-                    start: new Date('2025-01-02T18:20:00+09:00').getTime(),
-                },
-                {
-                    name: "VITICZ",
-                    start: new Date('2025-01-02T19:00:00+09:00').getTime(),
-                },
-                {
-                    name: "HYPERLOCK",
-                    start: new Date('2025-01-02T19:40:00+09:00').getTime(),
-                },
-                {
-                    name: "Nemonoika",
-                    start: new Date('2025-01-02T20:20:00+09:00').getTime(),
-                },
-                {
-                    name: "Mayonazy",
-                    start: new Date('2025-01-02T21:00:00+09:00').getTime(),
-                },
-                {
-                    name: "Alicemetix",
-                    start: new Date('2025-01-02T21:40:00+09:00').getTime(),
-                },
-                {
-                    name: "picco",
-                    start: new Date('2025-01-02T22:20:00+09:00').getTime(),
-                },
-                {
-                    name: "AdvanceRatio",
-                    start: new Date('2025-01-02T23:00:00+09:00').getTime(),
-                },
-                {
-                    name: "6Tan",
-                    start: new Date('2025-01-02T23:40:00+09:00').getTime(),
-                },
-                {
-                    name: "Assertive",
-                    start: new Date('2025-01-03T00:20:00+09:00').getTime(),
-                },
-                {
-                    name: "mochiya00",
-                    start: new Date('2025-01-03T01:00:00+09:00').getTime(),
-                },
-                {
-                    name: "DAYOx2",
-                    start: new Date('2025-01-03T01:40:00+09:00').getTime(),
-                },
-                {
-                    name: "anoueo",
-                    start: new Date('2025-01-03T02:20:00+09:00').getTime(),
-                },
-                {
-                    name: "Synthion",
-                    start: new Date('2025-01-03T03:00:00+09:00').getTime(),
-                },
-                {
-                    name: "Vanille A",
-                    start: new Date('2025-01-03T03:40:00+09:00').getTime(),
-                },
-                {
-                    name: "nichi",
-                    start: new Date('2025-01-03T04:20:00+09:00').getTime(),
-                },
-                {
-                    name: "Closing Statements",
-                    start: new Date('2025-01-03T05:00:00+09:00').getTime(),
-                }
-            ];
+            document.getElementById("editorlink").setAttribute("href", `editor.html${window.location.hash}`);
 
-            // var fit = fitty('#countdown', {
-            //     // multiLine: false
-            // })
+            const timetable = JSON.parse(decodeURIComponent(window.location.hash.substring(1)));
 
-
-            setInterval(() => {
+            function updateCountdown() {
                 const currentTime = Date.now();
                 let currentIdx = 0;
                 for (let i = 0; i < timetable.length; i++) {
@@ -186,8 +83,10 @@
                     document.getElementById("next").innerText = "none";
                     document.getElementById("countdown").innerText = "00:00";
                 }
-                // fitty.fitAll()
-            }, 1000);
+            }
+
+            updateCountdown();
+            setInterval(updateCountdown, 1000);
         </script>
     </body>
 </html>
