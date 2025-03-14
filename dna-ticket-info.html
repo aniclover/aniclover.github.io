@@ -237,11 +237,11 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
 
         })
 
-        // document.getElementById("email-form").style.display = 'none';
-        // document.getElementById("discount-code-area").style.display = 'block';
+        document.getElementById("email-form").style.display = 'none';
+        document.getElementById("discount-code-area").style.display = 'block';
 
         // Comment out when displaying code
-        ticketSubmit();
+        // ticketSubmit();
       }
 
       function addCallback(url) {
@@ -270,8 +270,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
               <div class="modal-body">
                 <form class="email-form" id="email-form">
                   <p>Please enter your name and email address so we can provide DJ updates and other show-related notifications.</p>
-                  <!-- <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase!</strong></p> -->
-                  <p><strong>Buy tickets now while discounted early tickets are still available!</strong></p>
+                  <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase. Good only while supplies last!</strong></p>
+                  <!-- <p><strong>Buy tickets now while discounted early tickets are still available!</strong></p> -->
                   <div class="row">
                     <div class="col">
                       <label for="fname" class="form-label">First Name</label>
@@ -333,8 +333,8 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
           <div class="col-xs-12 col-lg-3 sticky-top bg-dark bg-opacity-75">
             <div class="sticky-top">
               <dl class="row">
-                <dt class="col-4">Early</dt>
-                <dd class="col-8">$20 (limited qty)</dd>
+                <dt class="col-4 text-decoration-line-through">Early</dt>
+                <dd class="col-8 text-decoration-line-through">$20 (sold out)</dd>
 
                 <dt class="col-4">Advance</dt>
                 <dd class="col-8">$30</dd>
@@ -373,6 +373,30 @@ In your html page, add the snippet and call gtag_report_conversion when someone 
                 block, so don't miss the excitement as we bring the Tokyo anikura experience right here to the Bay Area!
               </p>
               <p>Club-friendly cosplay is welcome!</p>
+
+              <p>
+                Above DNA Lineup:
+                <ul>
+                  <li>Synthion</li>
+                  <li>Similar Outskirts</li>
+                  <li>DatGai</li>
+                  <li>Piroko Project</li>
+                  <li>rainy✩ミ</li>
+                  <li>refu</li>
+                  <li>Scarlett Lemieux</li>
+                  <li>AniCLover Sound Team</li>
+                </ul>
+              </p>
+              <p>
+                Dazzle Room Lineup:
+                <ul>
+                  <li>4ri</li>
+                  <li>EggZen</li>
+                  <li>ho</li>
+                  <li>Wotagei Block</li>
+                  <li>and more!</li>
+                </ul>
+              </p>
 
               <p>
                   DNA Lounge in San Francisco<br>
