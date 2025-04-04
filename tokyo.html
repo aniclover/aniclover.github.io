@@ -5,7 +5,7 @@
       <meta property="og:url" content ="https://aniclover.com/tokyo"/>
       <meta property="og:type" content="website"/>
       <meta property="og:title" content="Glitch | 4月26日(土) @ CIRCUS Tokyo"/>
-      <meta property="og:description" content="Festival of global anikura events"/>
+      <meta property="og:description" content="Festival of global anikura"/>
       <meta property="og:image" content="https://aniclover.com/assets/Glitch 2025-04 Poster.jpg"/>
 
       <meta property="description" content="Festival of global anikura events"/>
@@ -14,13 +14,13 @@
       <meta name="twitter:site" content="@aniclover"/>
       <meta name="twitter:creator" content="@aniclover">
       <meta name="twitter:title" content="Glitch | 4月26日(土) @ CIRCUS Tokyo"/>
-      <meta name="twitter:description" content="Festival of global anikura events"/>
+      <meta name="twitter:description" content="Festival of global anikura"/>
       <meta name="twitter:image" content="https://aniclover.com/assets/Glitch 2025-04 Poster.jpg"/>
   
 
     <script type="text/javascript">
       var QUERY_STRING = ""
-      const BASE_URL = "https://circus.zaiko.io/e/anikuraunisontokyo2025"
+      const BASE_URL = "https://circus.zaiko.io/e/glitch0426"
       
       var joinChar = '?';
       if (window.location.search) {
@@ -49,14 +49,14 @@
       s.parentNode.insertBefore(t,s)}(window, document,'script',
       'https://connect.facebook.net/en_US/fbevents.js');
       fbq('init', '949142891921298');
-      fbq('track', 'Lead');
+      fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
       src="https://www.facebook.com/tr?id=949142891921298&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
 
-    <!-- <meta http-equiv="refresh" content="0; URL=https://circus.zaiko.io/e/anikuraunisontokyo2025" /> -->
+    <!-- <meta http-equiv="refresh" content="0; URL=https://circus.zaiko.io/e/glitch0426" /> -->
 
     <!-- Event snippet for submit upstream ticket conversion page
     In your html page, add the snippet and call gtag_report_conversion when someone clicks on the chosen link or button. -->
@@ -133,39 +133,6 @@
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
   
       <script>
-        function emailSubmit(event) {
-          event.preventDefault()
-  
-          gtag_report_conversion_submit();
-
-          // const codeApiUrl = 'https://aniclover.azurewebsites.net/api/discount-code'
-          // const searchParams = new URLSearchParams(window.location.search)
-  
-          // const queryPayload = {
-          //   'source': searchParams.get("utm_source") || 'No Source',
-          //   'campaign': searchParams.get("utm_campaign") || 'No Campaign',
-          //   'email': document.getElementById("email").value,
-          //   'fname': document.getElementById("fname").value,
-          //   'lname': document.getElementById("lname").value
-          // }
-          // const queryParams = new URLSearchParams(queryPayload);
-  
-          // const jsonpUrl = addCallback(codeApiUrl+'?'+queryParams.toString())
-          // console.log("JSONP URL:" + jsonpUrl)
-            
-          // jsonpClient(jsonpUrl, function(err, data) {
-          //   console.log(data.code)
-          //   document.getElementById("discount-code").textContent = data.code.trim()
-  
-          // })
-  
-          // document.getElementById("email-form").style.display = 'none';
-          // document.getElementById("discount-code-area").style.display = 'block';
-  
-          // Comment out when displaying code
-          // ticketSubmit();
-        }
-
         function redirect(count) {
           if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
             window.location = BASE_URL;
@@ -177,85 +144,10 @@
         }
 
         function ticketClick() {
-          dataLayer.push({'event': 'submit_tokyo_ticket', 'eventCallback': ()=>{redirect(0)}, 'eventTimeout' : 2000})
-        }
-  
-        function addCallback(url) {
-          // The URL already has a callback
-          if (url.match(/callback=[a-z]/i)) {
-              return url;
-          }
-          return url + ("&callback=cb" + Math.random()).replace('.', '');
-        }
-  
-        function ticketSubmit() {
-          let ticketSubmitForm = document.getElementById("ticket-form");
-          ticketSubmitForm.submit();
+          fbq('track', 'Lead');
+          redirect(0);
         }
       </script>
-  
-      <div class="modal" id="MLModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4>Ticket Contact Registration</h4>
-                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
-                      <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                  <form class="email-form" id="email-form">
-                    <p>Please enter your name and email address so we can provide DJ updates and other show-related notifications.</p>
-                    <p><strong>Buy tickets now and get an instant discount code to use on your ticket purchase!</strong></p>
-                    <!-- <p><strong>Buy tickets now while discounted early advance pricing is still available!</strong></p> -->
-                    <div class="row">
-                      <div class="col">
-                        <label for="fname" class="form-label">First Name</label>
-                        <input type="text" id="fname" class="form-control" placeholder="First name" aria-label="First name" required>
-                      </div>
-                      <div class="col">
-                        <label for="lname" class="form-label">Last Name</label>
-                        <input type="text" id="lname" class="form-control" placeholder="Last name" aria-label="Last name" required>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <div class="col">
-                        <label for="email" class="form-label">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                      </div>
-                    </div>
-                    <div class="row">
-                      <button class="btn btn-danger btn-lg" type="submit">Buy Tickets</button>
-                    </div>
-                  </form>
-                  <div id="discount-code-area" class="row horiz-center justify-center discount-code">
-                    Discount Code
-                    <h1 class="display-6">
-                      <span id="discount-code" class="user-select-all">...loading code...</span>
-                      <button id="copyButton" class="btn btn-primary btn-md" title="Click to copy" onclick="copyToClipboard()">
-                        <i class="px-2 fa fa-clipboard" aria-hidden="true"></i>
-                      </button>
-                    </h1>
-                    <button class="btn btn-danger btn-lg" onclick="ticketSubmit()">Buy Tickets</button>
-                  </div>
-                  <script>
-                    document.getElementById("email-form").addEventListener("submit", emailSubmit)
-  
-                    const copyToClipboard = async () => {
-                      try {
-                        const element = document.getElementById('discount-code');
-                        await navigator.clipboard.writeText(element.textContent);
-                        // Optional: Provide feedback or perform additional actions upon successful copy
-                      } catch (error) {
-                        console.error("Failed to copy to clipboard:", error);
-                        // Optional: Handle and display the error to the user
-                      }
-                    };
-                  </script>
-                </div>
-            </div>
-        </div>
-      </div>
   
       <div class="container justify-content-center">
         <div class="tickets row">
@@ -278,9 +170,12 @@
                   <dd class="col-8">¥3000 + 1D</dd>
                 </dl>
   
-                <a class="btn btn-danger btn-lg btn-block w-100" href="https://circus.zaiko.io/e/anikuraunisontokyo2025">
+                <a id="ticket-button" class="btn btn-danger btn-lg btn-block w-100" href="https://circus.zaiko.io/e/glitch0426">
                   BUY TICKETS
                 </a>
+                <script>
+                  document.getElementById("ticket-button").addEventListener("click", ticketClick)
+                </script>
               </div>
             </div>
             
@@ -304,7 +199,7 @@
         </div>
       </div>
   
-    <!-- <a id="link" href="https://circus.zaiko.io/e/anikuraunisontokyo2025">Click here to continue to buy tickets</a>
+    <!-- <a id="link" href="https://circus.zaiko.io/e/glitch0426">Click here to continue to buy tickets</a>
 
     <script type="text/javascript">
       const link = document.querySelector("#link")

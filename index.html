@@ -280,7 +280,7 @@
                     </h1>
                     <div class="col-md-6">
                         <div class="btn-group-vertical btn-block w-100">
-                            <a href="https://aniclover.ticketspice.com/house-blend?utm_campaign=main&utm_source=website" class="btn btn-danger">
+                            <a href="https://aniclover.ticketspice.com/house-blend?utm_campaign=main&utm_source=website" class="btn btn-warning">
                                 <h4>Buy Tickets</h4>
                                 <!-- AniCLover @ X Bar Cupertino<br>
                                 Friday, February 21 @ 6:00PM -->
@@ -294,15 +294,34 @@
                     </div>
                     <div class="col-md-6">
                         <div class="btn-group-vertical btn-block w-100">
-                            <a href="https://circus.zaiko.io" class="btn btn-primary disabled">
-                                <h4>Coming Soon</h4>
+                            <a id="tokyo-button" href="https://circus.zaiko.io/e/glitch0426" class="btn btn-primary">
+                                <h4>Buy Tickets</h4>
                             </a>
                         </div>
                         <p>
-                            <a href="https://circus.zaiko.io" class="btn disabled">
+                            <a id="tokyo-img" href="https://circus.zaiko.io/e/glitch0426" class="btn">
                                 <img class="img-fluid" src="./assets/Glitch 2025-04 Poster.jpg" alt="Next Show">
                             </a>
-                        </p>    
+                        </p>
+                        <script>
+                            function redirect(count) {
+                                if ((typeof fbq !== 'undefined') && (fbq.version > '2.9')) {
+                                    window.location = BASE_URL;
+                                } else if (count > 200) {
+                                    window.location = BASE_URL;
+                                } else {
+                                    setTimeout(() => {redirect(count + 1)}, 10);
+                                }
+                            }
+
+                            function ticketClick() {
+                                fbq('track', 'PageView');
+                                redirect(0);
+                            }
+
+                            document.getElementById("tokyo-button").addEventListener("click", ticketClick)
+                            document.getElementById("tokyo-img").addEventListener("click", ticketClick)
+                        </script>          
                     </div>
                 </div>
             </div>
