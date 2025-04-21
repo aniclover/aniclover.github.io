@@ -1,7 +1,14 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-destination="https://www.aniclover.com">
 
 <head>
+    <noscript><meta id="redirect" http-equiv="refresh" content="0; url=https://www.aniclover.com"></noscript>
+
+    <script>
+        var destination = document.documentElement.getAttribute('data-destination');
+        window.location.href = destination + (window.location.search || '') + (window.location.hash || '');
+    </script>
+
     <title>AniCLover Main</title>
     <meta property="og:url" content ="https://aniclover.com"/>
     <meta property="og:title" content="AniCLover"/>
