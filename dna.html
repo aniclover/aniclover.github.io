@@ -18,7 +18,11 @@
 
     <script>
         var destination = document.documentElement.getAttribute('data-destination');
-        window.location.href = destination + (window.location.search || '') + (window.location.hash || '');
+        let searchParams = new URLSearchParams(window.location.search)
+        let campaign = searchParams.get("utm_source") || 'event_redirect'
+        searchParams.set("utm_source", campaign)
+
+        window.location.href = destination + (searchParams.toString()) + (window.location.hash || '');
     </script>
   </head>
 </html>
