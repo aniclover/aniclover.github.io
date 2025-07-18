@@ -22,7 +22,7 @@
         let campaign = searchParams.get("utm_source") || 'event_redirect'
         searchParams.set("utm_source", campaign)
 
-        window.location.href = destination + (searchParams.toString()) + (window.location.hash || '');
+        window.location.href = destination + ('?'+searchParams.toString()) + (window.location.hash || '');
     </script>
   </head>
 </html>
